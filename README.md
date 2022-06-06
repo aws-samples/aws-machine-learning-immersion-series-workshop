@@ -1,17 +1,5 @@
-## My Project
+# amazon-sagemaker-music-recommendation-workshop
 
-TODO: Fill this README out!
+This SageMaker workshop is designed based on the Amazon SageMaker Music Recommendation example. We have focused on the main SageMaker services and designed the labs to show each SageMaker feature that is used in the pipelines. Then in the last SageMaker pipelines lab, we combined all the steps used in the previous labs and create an orchestration pipeline to run an end-to-end process to demonstrate the entire ML lifecycle of this taxi fare prediction project.
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
-
+Instructions of the workshop can be found here: https://dc9o2tci1mrow.cloudfront.net
