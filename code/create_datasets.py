@@ -9,7 +9,7 @@ import logging
 import os
 import glob
 
-subprocess.check_call([sys.executable, "-m", "pip", "install", "sagemaker"])
+# subprocess.check_call([sys.executable, "-m", "pip", "install", "sagemaker"])
 import sagemaker
 
 
