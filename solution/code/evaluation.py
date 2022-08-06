@@ -46,11 +46,11 @@ if __name__ == "__main__":
 
     y_test = df.iloc[:, 0].values
     df.drop(df.columns[0], axis=1, inplace=True)
-    X_test = xgboost.DMatrix(df)
+    X_test = xgboost.DMatrix(df.values)
+    print(df.values)
 
     logger.info("Performing predictions against test data.")
     predictions = model.predict(X_test)
-    logger.debug(predictions)
 
     # See the regression metrics
     logger.debug("Calculating metrics.")
