@@ -7,12 +7,7 @@ import tarfile
 
 import numpy as np
 import pandas as pd
-# import subprocess
-# import sys
-# subprocess.check_call([sys.executable, "-m", "pip", "install", "xgboost"])
-# print(xgboost.__version__)
 import xgboost
-import glob
 
 from math import sqrt
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
@@ -46,8 +41,7 @@ if __name__ == "__main__":
 
     y_test = df.iloc[:, 0].values
     df.drop(df.columns[0], axis=1, inplace=True)
-    X_test = xgboost.DMatrix(df.values)
-    print(df.values)
+    X_test = xgboost.DMatrix(df)
 
     logger.info("Performing predictions against test data.")
     predictions = model.predict(X_test)
