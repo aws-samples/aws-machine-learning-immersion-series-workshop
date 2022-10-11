@@ -3,13 +3,11 @@ import argparse
 import pandas as pd
 import pathlib
 from sklearn.model_selection import train_test_split
-import subprocess
 import sys
 import logging
 import os
 import glob
 
-# subprocess.check_call([sys.executable, "-m", "pip", "install", "sagemaker"])
 import sagemaker
 
 
