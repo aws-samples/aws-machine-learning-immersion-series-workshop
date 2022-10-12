@@ -31,11 +31,13 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # Hyperparameters sent by the client are passed as command-line arguments to the script
-    parser.add_argument("--num_round", type=int, default=os.environ.get("SM_HP_num_round"))
     parser.add_argument("--max_depth", type=int, default=5)
     parser.add_argument("--eta", type=float, default=0.2)
     parser.add_argument("--objective", type=str, default="reg:squarederror")
-    parser.add_argument("--K", type=int, default=os.environ.get("SM_HP_K"))
+    #----------------------------------------------------------
+    # TODO - get the K and num_round from the parameter passed in to the traininig job
+    # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+    #----------------------------------------------------------
 
     # Data directories
     parser.add_argument("--train", type=str, default=os.environ.get("SM_CHANNEL_TRAIN"))
@@ -54,16 +56,18 @@ def train():
     K = args.K
 
     hyperparameters = {
-        "max_depth": args.max_depth,
-        "eta": args.eta,
-        "objective": args.objective,
-        "num_round": args.num_round,
+        #----------------------------------------------------------
+        # TODO - fill in all the hyperparameters
+        # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+        #----------------------------------------------------------
     }
 
     train_df = pd.read_csv(f"{args.train}/train.csv", header=None, index_col=None)
 
-    rmse_list, model = cross_validation(train_df, K, hyperparameters)
-    k_fold_avg = sum(rmse_list) / len(rmse_list)
+    #----------------------------------------------------------
+    # TODO - train the model with cross_validation function
+    # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+    #----------------------------------------------------------
     print(f"RMSE average across folds: {k_fold_avg}")
 
     model_location = args.model_dir + "/xgboost-model"

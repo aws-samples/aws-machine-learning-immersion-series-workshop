@@ -39,18 +39,24 @@ if __name__ == "__main__":
     logger.debug("Reading test data.")
     df = pd.read_csv(test_path+'test.csv', index_col=None, header=None)
 
-    y_test = df.iloc[:, 0].values
-    df.drop(df.columns[0], axis=1, inplace=True)
-    X_test = xgboost.DMatrix(df)
+    #----------------------------------------------------------
+    # TODO - read test data
+    # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+    #----------------------------------------------------------
 
     logger.info("Performing predictions against test data.")
-    predictions = model.predict(X_test)
+    #----------------------------------------------------------
+    # TODO - prediction against test data
+    # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+    #----------------------------------------------------------
 
     # See the regression metrics
     logger.debug("Calculating metrics.")
     mae = mean_absolute_error(y_test, predictions)
-    mse = mean_squared_error(y_test, predictions)
-    rmse = sqrt(mse)
+    #----------------------------------------------------------
+    # TODO - calculate rmse
+    # Please fill in this section of code by referring to the reference_notebook.ipynb notebook
+    #----------------------------------------------------------
     r2 = r2_score(y_test, predictions)
     std = np.std(y_test - predictions)
     report_dict = {
